@@ -3,17 +3,14 @@
 	"description": "Today Widget extension (iOS) development using React Native",
 	"version": "0.0.1",
 	"repository": {
-    "type": "git",
-    "url": "https://github.com/matejkriz/react-native-today-widget"
-  },
+		"type": "git",
+		"url": "https://github.com/matejkriz/react-native-today-widget"
+	},
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"test": "jest"
 	},
-	"dependencies": {
-		"react": "16.0.0-alpha.6",
-		"react-native": "0.44.0"
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"babel-jest": "20.0.3",
 		"babel-preset-react-native": "1.9.2",
@@ -22,5 +19,9 @@
 	},
 	"jest": {
 		"preset": "react-native"
+	},
+	"peerDependencies": {
+		"react": "^16.0.0-alpha.6",
+		"react-native": "^0.44.0"
 	}
 }

@@ -1,13 +1,14 @@
 {
   "name": "react-native-today-widget",
   "description": "Today Widget extension (iOS) development using React Native",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/matejkriz/react-native-today-widget"
   },
   "scripts": {
     "flow": "flow",
+    "postinstall": "scripts/bundleIdentifier.sh",
     "prettier": "prettier --bracket-spacing --single-quote --tab-width 2 --trailing-comma es5 --parser babylon --print-width 80  --write \"{{components,lib,pages,scripts,themes},__{tests,mocks}__}/**/*.js\"",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"

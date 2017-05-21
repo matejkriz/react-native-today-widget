@@ -9,7 +9,7 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
 export default class HelloToday extends Component {
@@ -31,6 +31,14 @@ export default class HelloToday extends Component {
   }
 }
 
+const TodayWidget = () => (
+  <View style={styles.widget}>
+    <Text style={styles.welcome}>
+      Hello Today!
+    </Text>
+  </View>
+);
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -43,6 +51,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
   },
+  widget: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   instructions: {
     textAlign: 'center',
     color: '#333333',
@@ -51,3 +64,4 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('HelloToday', () => HelloToday);
+AppRegistry.registerComponent('TodayWidget', () => TodayWidget);

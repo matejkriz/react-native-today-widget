@@ -6,7 +6,7 @@ then
     BUNDLE_ID_NEW='"'$1'"'
 else
     PACKAGE_NAME=$(sed -nE 's/^\s*"name": "(.*?)",$/\1/p' ../../package.json)
-    PLIST_PATH=$(pwd)../../ios/${PACKAGE_NAME}/Info.plist
+    PLIST_PATH=$(pwd)/../../ios/${PACKAGE_NAME}/Info.plist
 
     echo "Reading CFBundleIdentifier from: "$PLIST_PATH
     BUNDLE_ID=$(defaults read $PLIST_PATH CFBundleIdentifier)

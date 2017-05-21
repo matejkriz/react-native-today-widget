@@ -1632,8 +1632,8 @@ gulplog@^1.0.0:
     glogg "^1.0.0"
 
 handlebars@^4.0.3:
-  version "4.0.8"
-  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.0.8.tgz#22b875cd3f0e6cbea30314f144e82bc7a72ff420"
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.0.10.tgz#3d30c718b09a3d96f23ea4cc1f403c4d3ba9ff4f"
   dependencies:
     async "^1.4.0"
     optimist "^0.6.1"
@@ -2943,8 +2943,9 @@ react-devtools-core@^2.0.8:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-"react-native-today-widget@file:../..":
-  version "0.0.1"
+"react-native-today-widget@https://github.com/matejkriz/react-native-today-widget.git":
+  version "0.1.0"
+  resolved "https://github.com/matejkriz/react-native-today-widget.git#d9a1a5dd109ccc640a30b77dc5798d7baf3f3671"
 
 react-native@0.44.0:
   version "0.44.0"

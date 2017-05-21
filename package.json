@@ -1,27 +1,40 @@
 {
-	"name": "react-native-today-widget",
-	"description": "Today Widget extension (iOS) development using React Native",
-	"version": "0.0.1",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/matejkriz/react-native-today-widget"
-	},
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
-	},
-	"dependencies": {},
-	"devDependencies": {
-		"babel-jest": "20.0.3",
-		"babel-preset-react-native": "1.9.2",
-		"jest": "20.0.3",
-		"react-test-renderer": "16.0.0-alpha.6"
-	},
-	"jest": {
-		"preset": "react-native"
-	},
-	"peerDependencies": {
-		"react": "^16.0.0-alpha.6",
-		"react-native": "^0.44.0"
-	}
+  "name": "react-native-today-widget",
+  "description": "Today Widget extension (iOS) development using React Native",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matejkriz/react-native-today-widget"
+  },
+  "scripts": {
+    "flow": "flow",
+    "prettier": "prettier --bracket-spacing --single-quote --tab-width 2 --trailing-comma es5 --parser babylon --print-width 80  --write \"{{components,lib,pages,scripts,themes},__{tests,mocks}__}/**/*.js\"",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "20.0.3",
+    "babel-preset-react-native": "1.9.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "eslint-plugin-react-native": "^2.3.2",
+    "flow-bin": "0.42.0",
+    "jest": "20.0.3",
+    "prettier": "^1.3.1",
+    "react": "16.0.0-alpha.6",
+    "react-native": "^0.44.0",
+    "react-test-renderer": "16.0.0-alpha.6"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0-alpha.6",
+    "react-native": "^0.44.0"
+  }
 }

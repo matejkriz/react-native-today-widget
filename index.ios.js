@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,
@@ -34,16 +33,18 @@ const styles = StyleSheet.create({
 const RNTodayWidgetExtension = () => (
   <View style={styles.container}>
     <Text style={styles.welcome}>
-      Welcome to React Native!
+      Welcome to React Native Extension!
     </Text>
-    <Text style={styles.instructions}>
-      To get started, edit index.ios.js
-    </Text>
-    <Text style={styles.instructions}>
-      Press Cmd+R to reload,{'\n'}
-      Cmd+D or shake for dev menu
+  </View>
+);
+
+const TodayWidget = () => (
+  <View style={styles.container}>
+    <Text style={styles.welcome}>
+      Welcome to React Native Widget!
     </Text>
   </View>
 );
 
 AppRegistry.registerComponent('RNTodayWidgetExtension', () => RNTodayWidgetExtension);
+AppRegistry.registerComponent('TodayWidget', () => TodayWidget);

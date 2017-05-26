@@ -2944,8 +2944,8 @@ react-devtools-core@^2.0.8:
     ws "^2.0.3"
 
 "react-native-today-widget@https://github.com/matejkriz/react-native-today-widget.git":
-  version "0.1.0"
-  resolved "https://github.com/matejkriz/react-native-today-widget.git#d9a1a5dd109ccc640a30b77dc5798d7baf3f3671"
+  version "0.1.2"
+  resolved "https://github.com/matejkriz/react-native-today-widget.git#e6e5884a398f053457cfcc1bd3350b71b42cb1b2"
 
 react-native@0.44.0:
   version "0.44.0"

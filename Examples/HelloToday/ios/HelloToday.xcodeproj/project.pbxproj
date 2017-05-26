@@ -12,6 +12,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* HelloTodayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* HelloTodayTests.m */; };
+		0D7A1EA9BA93497BB9877469 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E346D7AF6D04E4F818CFD7B /* libRCTActionSheet.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -33,8 +34,7 @@
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* HelloTodayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* HelloTodayTests.m */; };
-		49926A5C14794706A9DBBEBE /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6B9480C51D4B3B9492B94F /* libRCTActionSheet.a */; };
-		57D76A211ED1DEBE004A13BE /* TodayWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 57D76A201ED1DEBE004A13BE /* TodayWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		57D76AA31ED20A79004A13BE /* TodayWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 57D76AA21ED20A3C004A13BE /* TodayWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
@@ -194,12 +194,26 @@
 			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
 			remoteInfo = "jschelpers-tvOS";
 		};
-		57D76A061ED1DEB9004A13BE /* PBXContainerItemProxy */ = {
+		57D76A861ED20A3C004A13BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RCTActionSheet;
+		};
+		57D76AA11ED20A3C004A13BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AE1ACC66AEE476E83871223 /* RNTodayWidgetExtension.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 57DB434C1ED1A1E3002AE0EB;
+			remoteInfo = TodayWidgetExtension;
+		};
+		57D76AA41ED20A79004A13BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AE1ACC66AEE476E83871223 /* RNTodayWidgetExtension.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 57DB434B1ED1A1E3002AE0EB;
+			remoteInfo = TodayWidgetExtension;
 		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -232,13 +246,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		57D76A221ED1DEBE004A13BE /* Embed App Extensions */ = {
+		57D76AA61ED20A79004A13BE /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				57D76A211ED1DEBE004A13BE /* TodayWidgetExtension.appex in Embed App Extensions */,
+				57D76AA31ED20A79004A13BE /* TodayWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,7 +269,6 @@
 		00E356EE1AD99517003FC87E /* HelloTodayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloTodayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* HelloTodayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloTodayTests.m; sourceTree = "<group>"; };
-		1304F1C5E7F247D2962D9474 /* RNTodayWidgetExtension.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNTodayWidgetExtension.xcodeproj; path = "../node_modules/react-native-today-widget/ios/RNTodayWidgetExtension.xcodeproj"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* HelloToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,8 +283,9 @@
 		2D02E4901E0B4A5D006451C7 /* HelloToday-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HelloToday-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D76A201ED1DEBE004A13BE /* TodayWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; path = TodayWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
-		6D6B9480C51D4B3B9492B94F /* libRCTActionSheet.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTActionSheet.a; sourceTree = "<group>"; };
+		6AE1ACC66AEE476E83871223 /* RNTodayWidgetExtension.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNTodayWidgetExtension.xcodeproj; path = "../node_modules/react-native-today-widget/ios/RNTodayWidgetExtension.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		7E346D7AF6D04E4F818CFD7B /* libRCTActionSheet.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTActionSheet.a; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,7 +312,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				49926A5C14794706A9DBBEBE /* libRCTActionSheet.a in Frameworks */,
+				0D7A1EA9BA93497BB9877469 /* libRCTActionSheet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +344,7 @@
 		00C302A81ABCB8CE00DB3ED1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				57D76A071ED1DEB9004A13BE /* libRCTActionSheet.a */,
+				57D76A871ED20A3C004A13BE /* libRCTActionSheet.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -433,6 +447,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		57D76A831ED20A3C004A13BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57D76AA21ED20A3C004A13BE /* TodayWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,7 +487,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				1304F1C5E7F247D2962D9474 /* RNTodayWidgetExtension.xcodeproj */,
+				6AE1ACC66AEE476E83871223 /* RNTodayWidgetExtension.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -532,11 +554,12 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				57D76A221ED1DEBE004A13BE /* Embed App Extensions */,
+				57D76AA61ED20A79004A13BE /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				57D76AA51ED20A79004A13BE /* PBXTargetDependency */,
 			);
 			name = HelloToday;
 			productName = "Hello World";
@@ -658,6 +681,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 57D76A831ED20A3C004A13BE /* Products */;
+					ProjectRef = 6AE1ACC66AEE476E83871223 /* RNTodayWidgetExtension.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -811,11 +838,18 @@
 			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		57D76A071ED1DEB9004A13BE /* libRCTActionSheet.a */ = {
+		57D76A871ED20A3C004A13BE /* libRCTActionSheet.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRCTActionSheet.a;
-			remoteRef = 57D76A061ED1DEB9004A13BE /* PBXContainerItemProxy */;
+			remoteRef = 57D76A861ED20A3C004A13BE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		57D76AA21ED20A3C004A13BE /* TodayWidgetExtension.appex */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.app-extension";
+			path = TodayWidgetExtension.appex;
+			remoteRef = 57D76AA11ED20A3C004A13BE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
@@ -960,6 +994,11 @@
 			isa = PBXTargetDependency;
 			target = 2D02E47A1E0B4A5D006451C7 /* HelloToday-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+		};
+		57D76AA51ED20A79004A13BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TodayWidgetExtension;
+			targetProxy = 57D76AA41ED20A79004A13BE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

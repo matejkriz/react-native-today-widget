@@ -3,12 +3,17 @@
   "description": "Today Widget extension (iOS) development using React Native",
   "version": "0.1.8",
   "author": "Matěj Kříž <Matej@matejkriz.cz>",
-  "license": "UNLICENSE",
+  "license": "Unlicense",
   "repository": {
     "type": "git",
     "url": "https://github.com/matejkriz/react-native-today-widget"
   },
-  "keywords": ["react-native", "today widget", "ios", "extension"],
+  "keywords": [
+    "react-native",
+    "today widget",
+    "ios",
+    "extension"
+  ],
   "scripts": {
     "bundle-id": "scripts/bundleIdentifier.sh",
     "flow": "flow",

@@ -64,4 +64,4 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('HelloToday', () => HelloToday);
-AppRegistry.registerComponent('TodayWidget', () => TodayWidget);
+AppRegistry.registerComponent('TodayWidgetExtension', () => TodayWidget);

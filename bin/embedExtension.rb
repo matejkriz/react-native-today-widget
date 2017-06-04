@@ -8,8 +8,8 @@ project_location = '../../**'
 binary_name = 'TodayWidgetExtension.appex'
 
 # Get useful variables
-project = Xcodeproj::Project.find(project_location)
+# project = Xcodeproj::Project.find(project_location)
 puts 'Finishing ruby script'
 
 # Save Xcode project
-project.save
+# project.save

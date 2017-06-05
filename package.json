@@ -20,7 +20,7 @@
   },
   "scripts": {
     "flow": "flow",
-    "postinstall": "./bin/setBundleId.sh && ./bin/embedExtension.rb",
+    "postinstall": "./bin/setBundleId.sh",
     "prettier": "prettier --bracket-spacing --single-quote --tab-width 2 --trailing-comma es5 --parser babylon --print-width 80  --write \"{{components,lib,pages,scripts,themes},__{tests,mocks}__}/**/*.js\"",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
@@ -49,5 +49,10 @@
   "peerDependencies": {
     "react": "^16.0.0-alpha.6",
     "react-native": "^0.44.0"
+  },
+  "rnpm": {
+    "commands": {
+      "postlink": "./bin/embedExtension.rb"
+    }
   }
 }

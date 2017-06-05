@@ -52,7 +52,7 @@
   },
   "rnpm": {
     "commands": {
-      "postlink": "./bin/embedExtension.rb"
+      "postlink": "./node_modules/.bin/embed-extension"
     }
   }
 }

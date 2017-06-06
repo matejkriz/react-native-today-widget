@@ -12,29 +12,25 @@ import {
   View,
 } from 'react-native';
 
-export default class HelloToday extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+const HelloToday = () => (
+  <View style={styles.container}>
+    <Text style={styles.welcome}>
+      Welcome to React Native!
+    </Text>
+    <Text style={styles.instructions}>
+      To get started, edit index.ios.js
+    </Text>
+    <Text style={styles.instructions}>
+      Press Cmd+R to reload,{'\n'}
+      Cmd+D or shake for dev menu
+    </Text>
+  </View>
+);
 
 const TodayWidget = () => (
   <View style={styles.widget}>
     <Text style={styles.welcome}>
-      Hello Today!
+      Hello Today Widget!
     </Text>
   </View>
 );
@@ -65,3 +61,4 @@ const styles = StyleSheet.create({
 
 AppRegistry.registerComponent('HelloToday', () => HelloToday);
 AppRegistry.registerComponent('TodayWidgetExtension', () => TodayWidget);
+export default HelloToday;

@@ -5,17 +5,18 @@
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"test": "jest",
-		"bundle-id": "bundle-id"
+		"bundle-id": "bundle-id",
+		"embed-extension": "embed-extension"
 	},
 	"dependencies": {
 		"react": "16.0.0-alpha.6",
-		"react-native": "0.44.0",
-		"react-native-today-widget": "https://github.com/matejkriz/react-native-today-widget.git"
+		"react-native": "0.44.3",
+		"react-native-today-widget": "^0.5.2"
 	},
 	"devDependencies": {
 		"babel-jest": "20.0.3",
 		"babel-preset-react-native": "1.9.2",
-		"jest": "20.0.3",
+		"jest": "20.0.4",
 		"react-test-renderer": "16.0.0-alpha.6"
 	},
 	"jest": {

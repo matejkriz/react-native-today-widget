@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 require 'rubygems'
 require 'xcodeproj'
-puts 'Starting embed extension script'
 
 project_location = './' # running as bin from root project
 extension_proj = 'RNTodayWidgetExtension.xcodeproj'
@@ -13,12 +12,35 @@ abort "Couldn't find XCode project in '#{project_location}ios/'" if project_path
 project = Xcodeproj::Project.open(project_path)
 app_target = project.targets.find { |t| !t.name['^(?!.*(tvOS|Tests)).*$'] }
 
-project_ext = project.files.find do |file|
+extension_ref = project.files.find do |file|
   file.name == extension_proj
 end
-appex_ref = project_ext.file_reference_proxies.first
 
-extension = Xcodeproj::Project.open(extension_path)
+extension = Xcodeproj::Project.open('./node_modules/' + extension_ref.path)
+appex = extension.products.first
+
+# add PBXContainerItemProxy as proxy for appex object, because it is from extension project
+container_item = project.new(Xcodeproj::Project::Object::PBXContainerItemProxy)
+container_item.container_portal = extension_ref.uuid
+container_item.proxy_type = "2"
+container_item.remote_global_id_string = appex.uuid
+
+# add PBXReferenceProxy as proxy for appex reference
+reference_proxy = project.new(Xcodeproj::Project::Object::PBXReferenceProxy)
+reference_proxy.file_type = appex.explicit_file_type
+reference_proxy.path = appex.path
+reference_proxy.remote_ref = container_item
+reference_proxy.source_tree = appex.source_tree
+
+# add PBXGroup with proxy reference in childern
+products_group = project.new(Xcodeproj::Project::Object::PBXGroup)
+products_group.name = 'Products'
+products_group.source_tree = "<group>"
+products_group<<reference_proxy
+
+extension_ref = project.files.find do |file|
+  file.name == extension_proj
+end
 
 # add extension target as dependency for app target
 extension.targets.each do |target|
@@ -42,15 +64,22 @@ if embed_extensions_phase.nil?
   embed_extensions_phase.name = 'Embed App Extensions'
 end
 
+# retrieve correct reference to binary from extension
+appex_ref = extension_ref.file_reference_proxies.first
+
 # embed extension binary to copy files build phase
 appex_included = embed_extensions_phase.files_references.include? appex_ref
 if appex_included
-  puts "[WARN] App already embeds #{appex_ref.display_name}"
+  puts "[WARN] App already embeds #{appex_ref.path}"
 else
-  build_file = embed_extensions_phase.add_file_reference(appex_ref)
-  build_file.settings = { "ATTRIBUTES" => ['RemoveHeadersOnCopy'] }
+  if appex_ref.nil?
+    puts "[WARN] Could not find proper binary to be embed"
+  else
+    build_file = embed_extensions_phase.add_file_reference(appex_ref)
+    build_file.settings = { "ATTRIBUTES" => ['RemoveHeadersOnCopy'] }
+    # save XCode project
+    project.save
+  end
 end
 
-puts 'Finishing embed extension script'
-# save XCode project
-project.save
+puts 'App Extension linked and binary embeded'

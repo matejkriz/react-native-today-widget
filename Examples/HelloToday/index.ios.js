@@ -11,6 +11,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import widget from 'react-native-today-widget';
 
 const HelloToday = () => (
   <View style={styles.container}>
@@ -27,13 +28,29 @@ const HelloToday = () => (
   </View>
 );
 
-const TodayWidget = () => (
-  <View style={styles.widget}>
-    <Text style={styles.welcome}>
-      Hello Today Widget!
-    </Text>
-  </View>
-);
+const TodayWidget = () => {
+  const isExpandable = true;
+  const maxHeight = 500;
+  widget.setExpandable(isExpandable, maxHeight);
+  const onLayout = (event) => {
+    const height = event.nativeEvent.layout.height;
+    if (height <= 110) {
+      console.log('widget is in compact mode');
+    } else if (height > 110) {
+      console.log('widget is in expanded mode');
+    }
+  };
+  return (
+    <View
+      onLayout={onLayout}
+      style={styles.widget}
+    >
+      <Text style={styles.welcome}>
+        Hello Today Widget!
+      </Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

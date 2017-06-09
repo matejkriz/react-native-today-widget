@@ -19,6 +19,7 @@
 		57D769601ED1AF65004A13BE /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		57DB434F1ED1A1E4002AE0EB /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DB434E1ED1A1E4002AE0EB /* NotificationCenter.framework */; };
 		57DB43531ED1A1E4002AE0EB /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DB43521ED1A1E4002AE0EB /* TodayViewController.m */; };
+		57F2EF361EE83955004F4A12 /* DisplayMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F2EF351EE83955004F4A12 /* DisplayMode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +214,8 @@
 		57DB43511ED1A1E4002AE0EB /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		57DB43521ED1A1E4002AE0EB /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		57DB43571ED1A1E4002AE0EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57F2EF341EE838EC004F4A12 /* DisplayMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayMode.h; sourceTree = "<group>"; };
+		57F2EF351EE83955004F4A12 /* DisplayMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayMode.m; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -328,6 +331,8 @@
 			children = (
 				57DB43511ED1A1E4002AE0EB /* TodayViewController.h */,
 				57DB43521ED1A1E4002AE0EB /* TodayViewController.m */,
+				57F2EF341EE838EC004F4A12 /* DisplayMode.h */,
+				57F2EF351EE83955004F4A12 /* DisplayMode.m */,
 				57DB43571ED1A1E4002AE0EB /* Info.plist */,
 			);
 			path = TodayWidgetExtension;
@@ -691,6 +696,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57DB43531ED1A1E4002AE0EB /* TodayViewController.m in Sources */,
+				57F2EF361EE83955004F4A12 /* DisplayMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

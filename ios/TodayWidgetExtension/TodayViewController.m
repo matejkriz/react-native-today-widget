@@ -12,6 +12,10 @@
 #import <React/RCTRootView.h>
 #import <NotificationCenter/NotificationCenter.h>
 
+#import "DisplayMode.h"
+
+DisplayMode* displayMode;
+
 @interface TodayViewController () <NCWidgetProviding>
 
 @end
@@ -27,6 +31,17 @@
                                                    launchOptions:nil];
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1 green:1 blue:1 alpha:0];
   self.view = rootView;
+  
+  displayMode = [[DisplayMode alloc]initWithContext:self.extensionContext];
+}
+
+- (void)widgetActiveDisplayModeDidChange:(NCWidgetDisplayMode)activeDisplayMode withMaximumSize:(CGSize)maxSize{
+  if (activeDisplayMode == NCWidgetDisplayModeCompact){
+    self.preferredContentSize = maxSize;
+  }
+  else if (activeDisplayMode == NCWidgetDisplayModeExpanded){
+    self.preferredContentSize = CGSizeMake(maxSize.width, [DisplayMode getMaxHeight]);
+  }
 }
 
 - (void)viewDidLoad {

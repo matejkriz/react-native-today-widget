@@ -6,7 +6,7 @@ What is [Today Widget](https://developer.apple.com/ios/human-interface-guideline
 
 ## Getting started
 
-This library help you to add iOS Today Widget App Extension without need to open XCode.
+This library will help you to add iOS Today Widget App Extension without need to open XCode.
 
 ### Setup
 

@@ -23,6 +23,7 @@ appex = extension.products.first
 container_item = project.new(Xcodeproj::Project::Object::PBXContainerItemProxy)
 container_item.container_portal = extension_ref.uuid
 container_item.proxy_type = "2"
+container_item.remote_info = "TodayWidgetExtension"
 container_item.remote_global_id_string = appex.uuid
 
 # add PBXReferenceProxy as proxy for appex reference
@@ -37,6 +38,11 @@ products_group = project.new(Xcodeproj::Project::Object::PBXGroup)
 products_group.name = 'Products'
 products_group.source_tree = "<group>"
 products_group<<reference_proxy
+
+project_reference = Xcodeproj::Project::ObjectDictionary.new(project.root_object.references_by_keys_attributes.first, project.root_object)
+project_reference['ProjectRef'] = extension_ref
+project_reference['ProductGroup'] = products_group
+project.root_object.project_references << project_reference
 
 extension_ref = project.files.find do |file|
   file.name == extension_proj

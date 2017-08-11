@@ -1,7 +1,7 @@
 {
   "name": "react-native-today-widget",
   "description": "Today Widget extension (iOS) development using React Native",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "author": "Matěj Kříž <Matej@matejkriz.cz>",
   "license": "Unlicense",
   "repository": {

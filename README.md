@@ -8,6 +8,19 @@ What is [Today Widget](https://developer.apple.com/ios/human-interface-guideline
 
 This library will help you to add iOS Today Widget App Extension without need to open XCode.
 
+### Dependencies
+
+- `realpath` (from `coreutils`) for postinstall script setting bundle ID of the Today Widget:
+```bash
+$ brew install coreutils
+```
+
+- `xcodeproj` for linking script:
+```bash
+$ gem install xcodeproj
+```
+You may need to use `sudo gem install xcodeproj` or `sudo gem install -n /usr/local/bin xcodeproj` depends on your Ruby installation.
+
 ### Setup
 
 ```bash

@@ -38,7 +38,7 @@ const TodayWidget = () => {
 
 AppRegistry.registerComponent('TodayWidgetExtension', () => TodayWidget);
 ```
-In place of `TodayWidget` component, you could use any JSX component. See [HelloToday example](https://github.com/matejkriz/react-native-today-widget/blob/master/Examples/HelloToday/index.ios.js#L30).
+In place of `TodayWidget` component, you could use any JSX component. See [Basic example](https://github.com/matejkriz/react-native-today-widget/blob/master/Examples/Basic/index.ios.js#L34).
 
 Run your app as usual:
 ```bash
@@ -57,13 +57,12 @@ The memory limit for Today Widget on device is 16 MB. (Great explanation is in t
 
 Verified experimentally using [XCode debugger](https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/debugging_tools.html#//apple_ref/doc/uid/TP40015022-CH8-SW16) - while loading big image, Today Widget crashes as soon as it reaches 16 MB memory usage.
 
-Memory usage of simple [HelloToday](https://github.com/matejkriz/react-native-today-widget/tree/master/Examples/HelloToday) example with just one Text element is about 11 MB. Up to 13 MB during content rendering.
+Memory usage of [Basic](https://github.com/matejkriz/react-native-today-widget/tree/master/Examples/Basic) example with just one Text element is about 11 MB. Up to 13 MB during content rendering.
 
 > For running Today Widget on device you have to use [`Release` build configuration](http://facebook.github.io/react-native/releases/0.48/docs/running-on-device.html#2-configure-release-scheme). Development mode adds too much overhead. Only possibility to run the widget on device in development mode is using [Instruments](https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/InstrumentsUserGuide/index.html#//apple_ref/doc/uid/TP40004652-CH3-SW1) tool to temporarily disable the limit.
 
 
 ### Notes
-- Look at the [Examples/HelloToday](https://github.com/matejkriz/react-native-today-widget/tree/master/Examples/HelloToday). Only changes from output of `react-native init` are in `package.json` and `index.ios.js` files.
 - For recomended transparent background simply don't set any `backgroundColor` for your Today Widget component.
 - [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/extensions/widgets/)
 - Today Widget content will reload when you leave search screen and go back.

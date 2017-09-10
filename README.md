@@ -38,7 +38,7 @@ const TodayWidget = () => {
 
 AppRegistry.registerComponent('TodayWidgetExtension', () => TodayWidget);
 ```
-In place of `TodayWidget` component, you could use any JSX component. See [Basic example](https://github.com/matejkriz/react-native-today-widget/blob/master/Examples/Basic/index.ios.js#L34).
+In place of `TodayWidget` component, you could use any JSX component. See [Basic example](./Examples/Basic/index.ios.js#L34).
 
 Run your app as usual:
 ```bash
@@ -106,6 +106,7 @@ const TodayWidget = () => {
 };
 ```
 
+You could try [Expandable example](./Examples/Expandable)
 
 ### TODO
 - [x] Set Bundle Identifier by the main app in postinstall.

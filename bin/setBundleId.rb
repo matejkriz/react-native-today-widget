@@ -5,14 +5,20 @@ require 'xcodeproj'
 
 WIDGET_EXT='.TodayWidgetExtension'
 
-project_location = './' # running as bin from root project
-extension_location = 'node_modules/react-native-today-widget/' # running as bin from root project
-info_plist_file = 'Info.plist'
+if File.exist?('./bin/setBundleId.rb')
+  # running from node_modules during installation
+  project_location = './../../ios/'
+  extension_location = './ios/'
+else
+   # running as bin from root project
+  project_location = './ios/'
+  extension_location = './node_modules/react-native-today-widget/ios/'
+end
 
 # Read values from main project
-project_path = Dir.glob("#{project_location}ios/*.{xcodeproj,xcworkspace}").first
+project_path = Dir.glob("#{project_location}*.{xcodeproj,xcworkspace}").first
   if project_path.nil?
-    puts "[WARN] Couldn't find XCode project in '#{project_location}ios/'"
+    puts "[WARN] Couldn't find XCode project in '#{project_location}'"
   end
 project = Xcodeproj::Project.open(project_path)
 
@@ -30,7 +36,7 @@ if PRODUCT_BUNDLE_IDENTIFIER
   bundle_id_projet = PRODUCT_BUNDLE_IDENTIFIER
 else
   INFOPLIST_FILE = build_settings['INFOPLIST_FILE']
-  info_plist_project = "#{project_location}ios/#{INFOPLIST_FILE}"
+  info_plist_project = "#{project_location}#{INFOPLIST_FILE}"
   if info_plist_project.nil?
     puts "[WARN] Couldn't find Info.plist in '#{info_plist_project}'"
   end
@@ -55,9 +61,9 @@ end
 bundle_id_extension = "#{bundle_id_projet}#{WIDGET_EXT}"
 
 # Write bundle id to project for extension
-info_plist_extension = Dir.glob("#{project_location}#{extension_location}ios/TodayWidgetExtension/#{info_plist_file}").first
+info_plist_extension = Dir.glob("#{extension_location}TodayWidgetExtension/Info.plist").first
   if info_plist_extension.nil?
-    puts "[WARN] Couldn't find Info.plist in '#{project_location}ios/'"
+    puts "[WARN] Couldn't find Info.plist in '#{extension_location}TodayWidgetExtension/Info.plist'"
   end
 plist_extension = Xcodeproj::Plist.read_from_path(info_plist_extension)
 plist_extension['CFBundleIdentifier'] = bundle_id_extension

@@ -10,11 +10,6 @@ This library will help you to add iOS Today Widget App Extension without need to
 
 ### Dependencies
 
-- `realpath` (from `coreutils`) for postinstall script setting bundle ID of the Today Widget:
-```bash
-$ brew install coreutils
-```
-
 - `xcodeproj` for linking script:
 ```bash
 $ gem install xcodeproj

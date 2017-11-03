@@ -16,6 +16,8 @@ $ gem install xcodeproj
 ```
 You may need to use `sudo gem install xcodeproj` or `sudo gem install -n /usr/local/bin xcodeproj` depends on your Ruby installation.
 
+- For React Native compatibility, check peerDependencies in [package.json ](./package.json#L50)
+
 ### Setup
 
 ```bash
@@ -26,7 +28,7 @@ You could use `$ npm i react-native-today-widget --save` as well, but don't forg
 
 ### Usage
 
-All you need is to register your component for key `TodayWidgetExtension` in your `index.js` (`index.ios.js` for RN < v0.49.0)
+All you need is to register your component for key `TodayWidgetExtension` in your `index.js`
 ```jsx
 const TodayWidget = () => (
   <View>

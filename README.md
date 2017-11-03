@@ -26,6 +26,8 @@ $ react-native link
 ```
 You could use `$ npm i react-native-today-widget --save` as well, but don't forget to save it in `package.json` dependencies. Otherwise RN will not link it.
 
+> Whenever you change Bundle Identifier (CFBundleIdentifier) for main app, you have to run `./node_modules/.bin/bundle-id` script or reinstall the module (`rm -rf node_modules/react-native-today-widget && yarn`)
+
 ### Usage
 
 All you need is to register your component for key `TodayWidgetExtension` in your `index.js`
@@ -123,6 +125,8 @@ You could try [Expandable example](./Examples/Expandable)
 
 
 - [ ] Enable to set Display Name for the extension.
+
+- [ ] Use index.widget.js as entry-file to get back compatibility with RN < 0.49
 
 - [x] Implement Show More/Less button.
 

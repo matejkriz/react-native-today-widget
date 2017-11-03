@@ -16,7 +16,7 @@ $ gem install xcodeproj
 ```
 You may need to use `sudo gem install xcodeproj` or `sudo gem install -n /usr/local/bin xcodeproj` depends on your Ruby installation.
 
-- For React Native compatibility, check peerDependencies in [package.json ](./package.json#L50)
+- For React Native compatibility, check peerDependencies in [package.json](./package.json#L50)
 
 ### Setup
 
@@ -27,6 +27,14 @@ $ react-native link
 You could use `$ npm i react-native-today-widget --save` as well, but don't forget to save it in `package.json` dependencies. Otherwise RN will not link it.
 
 > Whenever you change Bundle Identifier (CFBundleIdentifier) for main app, you have to run `./node_modules/.bin/bundle-id` script or reinstall the module (`rm -rf node_modules/react-native-today-widget && yarn`)
+
+#### Manual linking
+`react-native link` should works, but in case of some troubles, you could follow [general guide for linking libraries](https://facebook.github.io/react-native/docs/linking-libraries-ios.html#manual-linking).
+
+- file for [Step 1](https://facebook.github.io/react-native/docs/linking-libraries-ios.html#step-1) is `/node_modules/react-native-today-widget/ios/RNTodayWidgetExtension.xcodeproj`
+- as a [Step 2](https://facebook.github.io/react-native/docs/linking-libraries-ios.html#step-2), add `TodayWidgetExtension.appex` to Embedded Binaries on the General tab for your main target
+- in [Step 3](https://facebook.github.io/react-native/docs/linking-libraries-ios.html#step-3), add `$(SRCROOT)/../node_modules/react-native-today-widget/ios/TodayWidgetExtension` to Header Sear Paths
+
 
 ### Usage
 
@@ -119,9 +127,9 @@ You could try [Expandable example](./Examples/Expandable)
 
 - [ ] Enhance documentation.
   - [ ] Add screenshots.
-  - [ ] Describe manual linking.
+  - [x] Describe manual linking.
   - [ ] Describe usage of provided scripts.
-  - [ ] Describe possibilities to change bundle ID
+  - [x] Describe possibilities to change bundle ID.
 
 
 - [ ] Enable to set Display Name for the extension.

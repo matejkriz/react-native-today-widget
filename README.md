@@ -26,7 +26,7 @@ You could use `$ npm i react-native-today-widget --save` as well, but don't forg
 
 ### Usage
 
-All you need is to register your component for key `TodayWidgetExtension` in your `index.ios.js`
+All you need is to register your component for key `TodayWidgetExtension` in your `index.js` (`index.ios.js` for RN < v0.49.0)
 ```jsx
 const TodayWidget = () => {
   <View>
@@ -117,6 +117,7 @@ You could try [Expandable example](./Examples/Expandable)
   - [ ] Add screenshots.
   - [ ] Describe manual linking.
   - [ ] Describe usage of provided scripts.
+  - [ ] Describe possibilities to change bundel ID
 
 
 - [ ] Enable to set Display Name for the extension.

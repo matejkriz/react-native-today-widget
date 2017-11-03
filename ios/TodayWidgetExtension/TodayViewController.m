@@ -11,6 +11,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <NotificationCenter/NotificationCenter.h>
+#import <React/RCTVersion.h>
 
 #import "DisplayMode.h"
 
@@ -23,7 +24,9 @@ DisplayMode* displayMode;
 @implementation TodayViewController
 
 - (void)loadView {
-  NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+  int RNVersionMinor = (int)[[REACT_NATIVE_VERSION objectForKey:@"minor"] integerValue];
+  
+  NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot: RNVersionMinor < 49 ? @"index.ios" : @"index" fallbackResource:nil];
   
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"TodayWidgetExtension"

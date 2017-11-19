@@ -1,23 +1,44 @@
 {
-	"name": "HoppyGoWidget",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
-	},
-	"dependencies": {
-		"react": "16.0.0",
-		"react-native": "0.50.3",
-		"react-native-today-widget": "^0.8.1"
-	},
-	"devDependencies": {
-		"babel-jest": "21.2.0",
-		"babel-preset-react-native": "4.0.0",
-		"jest": "21.2.1",
-		"react-test-renderer": "16.0.0"
-	},
-	"jest": {
-		"preset": "react-native"
-	}
+  "name": "HoppyGoWidget",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "eslint": "eslint .",
+    "flow": "flow",
+    "jest": "jest",
+    "test": "yarn run eslint && yarn run flow && jest",
+    "prettier":
+      "prettier --print-width 80 --tab-width 2 --single-quote --trailing-comma all --bracket-spacing --parser babylon --write '{components,__{tests,mocks}__}/**/*.js'"
+  },
+  "dependencies": {
+    "flow-bin": "0.56",
+    "react": "16.0.0",
+    "react-native": "0.50.3",
+    "react-native-today-widget": "^0.8.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-jest": "21.2.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react-native": "4.0.0",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.8.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-fp": "^2.3.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.5.0",
+    "jest": "21.2.1",
+    "prettier": "^1.8.2",
+    "react-test-renderer": "16.0.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
 }

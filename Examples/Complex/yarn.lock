@@ -3296,6 +3296,10 @@ react-devtools-core@^2.5.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
+react-native-today-widget@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/react-native-today-widget/-/react-native-today-widget-0.8.1.tgz#83b220908d4471e265e1062a5ad5cf37bf67adbe"
+
 react-native@0.50.3:
   version "0.50.3"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.50.3.tgz#91282bd5356cc7d794969cdc443cc764389b9af4"

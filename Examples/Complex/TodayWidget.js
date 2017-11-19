@@ -1,10 +1,18 @@
+// @flow
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import CarsNearby from './components/CarsNearby';
 
 const TodayWidget = () => (
-  <View>
-    <Text>HoppyGo</Text>
+  <View style={styles.container}>
+    <CarsNearby />
   </View>
 );
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default TodayWidget;

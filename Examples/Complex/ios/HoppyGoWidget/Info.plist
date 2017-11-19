@@ -35,8 +35,16 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Pro zobrazení aut ve Vašem okolí.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Pro zobrazení aut ve Vašem okolí.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>Pro zobrazení aut ve Vašem okolí.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

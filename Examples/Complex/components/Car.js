@@ -31,11 +31,12 @@ const styles = StyleSheet.create({
   header: {
     color: '#2d2d2d',
     flex: 2,
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: '600',
   },
   price: {
     flex: 1,
+    textAlign: 'right',
   },
 });
 

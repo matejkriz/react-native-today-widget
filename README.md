@@ -83,6 +83,28 @@ Memory usage of [Basic](https://github.com/matejkriz/react-native-today-widget/t
 
 ### API Reference
 
+#### `DevMenu`
+Default dev menu is not available in widget, but you could use `DevSettings` from `NativeModules` or this prepared `DevMenu` component to enable Live/Hot reload or remote JS debugging.
+
+- `children` - trigger element (TouchableOpacity by default)
+- `style` - overriding default style for trigger element
+- `title` - set trigger text ('DM' by default)
+
+##### Example
+```jsx
+import { DevMenu } from 'react-native-today-widget';
+
+const TodayWidget = () => (
+  <View>
+    <Text>Hello Today Widget!</Text>
+    {__DEV__ && <DevMenu />
+      /* Has to be a last element to be clickable,
+      because it has absolute position */
+    }
+  </View>
+);
+```
+
 #### `setExpandable([expandable], [maxHeight])`
 Enables to display native Show More / Less button in top right corner of the widget (iOS 10).
 
@@ -134,7 +156,7 @@ You could try [Expandable example](./Examples/Expandable)
 
 - [ ] Enable to set Display Name for the extension.
 
-- [ ] Use index.widget.js as entry-file to get back compatibility with RN < 0.49
+- [ x] Use index.js as entry-file to get back compatibility with RN < 0.49
 
 - [x] Implement Show More/Less button.
 

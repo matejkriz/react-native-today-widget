@@ -16,6 +16,9 @@
     "jest": true,
     "mocha": true
   },
+  "globals": {
+    "__DEV__": true
+  },
   "rules": {
     // Soft some rules.
     "arrow-parens": 0, // Does not work with Flow generic types.
@@ -41,6 +44,7 @@
     "sort-keys": 2,
     // Rules for functional programming. We do not need Object.freeze.
     "fp/no-mutating-assign": 2,
+    "array-callback-return": 0,
     "prettier/prettier": [
       "error",
       {

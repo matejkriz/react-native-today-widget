@@ -1,10 +1,16 @@
 // @flow
 import React, { Component } from 'react';
-import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, View, Text } from 'react-native';
 import withLocation from './withLocation';
 import api from '../config/api';
+import config from '../config';
 import Car from './Car';
 import { getTomorrowDateRange } from '../lib/date';
+import { dirs, fetchToFile, loadFromFile } from '../lib/fetchBlob';
+
+const carsNearbyPath = `${dirs.CacheDir}${config.cachePath}${
+  config.carsNearbyFileName
+}`;
 
 type CarObject = {
   id: number,
@@ -24,6 +30,7 @@ type CarObject = {
 type CarsNearbyState = {
   carsNearby: Array<CarObject>,
   error: ?string,
+  isFetching: boolean,
 };
 
 type CarsNearbyProps = {
@@ -45,54 +52,85 @@ class CarsNearby extends Component<CarsNearbyProps, CarsNearbyState> {
     this.state = {
       carsNearby: [],
       error: null,
+      isFetching: false,
     };
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidMount() {
+    this.loadNearbyCars();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
     const { latitude, longitude } = this.props;
-    if (prevProps.latitude !== latitude || prevProps.longitude !== longitude) {
-      this.loadNearbyCars({
+    const { isFetching } = this.state;
+    if (
+      !isFetching &&
+      (latitude !== prevProps.latitude || longitude !== prevProps.longitude)
+    ) {
+      this.fetchNearbyCars({
         dateRange: getTomorrowDateRange(new Date()),
         latitude,
         longitude,
         pickUpDistance: api.pickUpDistance,
       });
+    } else if (prevState.isFetching && !isFetching) {
+      this.loadNearbyCars();
     }
   }
 
-  loadNearbyCars = async ({
+  fetchNearbyCars = async ({
     dateRange,
     latitude,
     longitude,
     pickUpDistance,
   }: loadNearbyCarsProps): Promise<any> => {
+    this.setState({
+      isFetching: true,
+    });
     try {
-      const response = await fetch(
-        `${api.path}?available__between=${dateRange}&pick_up_distance=${
-          latitude
-        },${longitude},${pickUpDistance}`,
-      );
-      const responseJson = await response.json();
-      this.setState({ carsNearby: responseJson, error: null });
+      await fetchToFile({
+        headers: api.headers,
+        path: carsNearbyPath,
+        requestPath: api.requestPath({
+          dateRange,
+          latitude,
+          longitude,
+          pickUpDistance,
+        }),
+      });
+      this.setState({
+        error: null,
+        isFetching: false,
+      });
     } catch (error) {
-      this.setState({ error: error.message });
+      this.setState({ error, isFetching: false });
+    }
+  };
+
+  loadNearbyCars = async () => {
+    try {
+      const carsNearby = await loadFromFile({ path: carsNearbyPath });
+      this.setState({
+        carsNearby: JSON.parse(carsNearby),
+        error: null,
+      });
+    } catch (error) {
+      this.setState({ error });
     }
   };
 
   render() {
-    const { carsNearby, error } = this.state;
-    const isLoading = !carsNearby.length;
+    const { carsNearby, error, isFetching } = this.state;
     if (error) {
-      return null;
+      return <Text>{error}</Text>;
     }
-    if (isLoading) {
+    if (isFetching && carsNearby && !carsNearby.length) {
       return <ActivityIndicator style={styles.container} />;
     }
     return (
       <View style={styles.container}>
-        {carsNearby
-          .slice(0, 2)
-          .map(car => (
+        {carsNearby &&
+          carsNearby.map(car => (
             <Car
               key={car.id}
               manufacturer={car.model.manufacturer.name}

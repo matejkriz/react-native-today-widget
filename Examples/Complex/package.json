@@ -8,14 +8,14 @@
     "flow": "flow",
     "jest": "jest",
     "test": "yarn run eslint && yarn run flow && jest",
-    "prettier":
-      "prettier --print-width 80 --tab-width 2 --single-quote --trailing-comma all --bracket-spacing --parser babylon --write '{components,__{tests,mocks}__}/**/*.js'"
+    "prettier": "prettier --print-width 80 --tab-width 2 --single-quote --trailing-comma all --bracket-spacing --parser babylon --write '{components,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
     "flow-bin": "0.56",
     "react": "16.0.0",
     "react-native": "0.50.3",
-    "react-native-today-widget": "^0.8.1"
+    "react-native-fetch-blob": "^0.10.8",
+    "react-native-today-widget": "0.9.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

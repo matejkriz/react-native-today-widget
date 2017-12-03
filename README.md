@@ -63,6 +63,7 @@ If you need to see logs from TodayWidgetExtension, use:
 ```bash
 react-native log-ios
 ```
+> In your extension scheme’s Run phase, you specify a `host app` as the executable
 
 ### Memory limitation
 The memory limit for Today Widget on device is 16 MB. (Great explanation is in this [talk by Conrad Kramer](https://cocoaheads.tv/memory-use-in-extensions-by-conrad-kramer/))
@@ -80,6 +81,7 @@ Memory usage of [Basic](https://github.com/matejkriz/react-native-today-widget/t
 - Today Widget content will reload when you leave search screen and go back.
 - More about: [iOS App Extensions](https://developer.apple.com/app-extensions/)
 - [Today Widget in App Extension Programming Guide](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/Today.html#//apple_ref/doc/uid/TP40014214-CH11-SW1)
+- Every native changes are only in node_modules so probably gitignored.
 
 ### API Reference
 

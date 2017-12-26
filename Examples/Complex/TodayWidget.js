@@ -1,8 +1,13 @@
 // @flow
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { DevMenu } from 'react-native-today-widget';
+import { DevMenu, setExpandable } from 'react-native-today-widget';
+import config from './config';
 import CarsNearby from './components/CarsNearby';
+
+const isExpandable = true;
+const maxHeight = config.rowHeight * config.maxCountOfCars;
+setExpandable(isExpandable, maxHeight);
 
 const TodayWidget = () => (
   <View style={styles.container}>

@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import config from '../config';
 
 type CarProps = {
   manufacturer: string,
@@ -17,16 +18,19 @@ const Car = ({ manufacturer, model, price }: CarProps) => (
   </View>
 );
 
+const { width } = Dimensions.get('window');
+const paddingHorizontal = 16;
+
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: 1,
     borderColor: 'darkgray',
-    flex: 1,
     flexDirection: 'row',
-    height: 55,
+    height: config.rowHeight,
     justifyContent: 'space-between',
-    paddingHorizontal: 16,
+    paddingHorizontal,
+    width: width - paddingHorizontal,
   },
   header: {
     color: '#2d2d2d',

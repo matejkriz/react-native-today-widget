@@ -13,22 +13,20 @@
 
 @implementation Linking
 
+NSExtensionContext* widgetContext;
 
-NSExtensionContext* extensionContext;
-
-// To export a module named DisplayMode
+// To export a module named Linking
 RCT_EXPORT_MODULE();
 
 - (id)initWithContext:(NSExtensionContext*)context {
   self = [super init];
-  extensionContext = context;
+  widgetContext = context;
   return self;
 }
 
-RCT_EXPORT_METHOD(openURL:(NSURL *)URL
-completionHandler:(void (^)(BOOL success))completionHandler)
+RCT_EXPORT_METHOD(openURL:(NSURL *)url )
 {
-  [extensionContext openURL:URL];
+  [widgetContext openURL:url completionHandler:nil];
 }
 
 @end

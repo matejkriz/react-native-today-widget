@@ -11,7 +11,6 @@
 
 @interface Linking : NSObject <RCTBridgeModule>
 
-- (void)openURL:(NSURL *)URL
-completionHandler:(void (^)(BOOL success))completionHandler;
+- (id)initWithContext:(NSExtensionContext*)context;
 
 @end

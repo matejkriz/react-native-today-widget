@@ -3969,9 +3969,9 @@ react-native-fetch-blob@^0.10.8:
     base-64 "0.1.0"
     glob "7.0.6"
 
-react-native-today-widget@0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/react-native-today-widget/-/react-native-today-widget-0.9.1.tgz#c26b39eb2daf5a4e39df886b9880ab6921d61a14"
+react-native-today-widget@0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/react-native-today-widget/-/react-native-today-widget-0.10.1.tgz#6cee595fdf8901e6e55613a2a5a1e9130804438a"
 
 react-native@0.50.3:
   version "0.50.3"

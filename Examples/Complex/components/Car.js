@@ -1,20 +1,37 @@
 // @flow
 import React from 'react';
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import config from '../config';
+import { openURL } from 'react-native-today-widget';
 
 type CarProps = {
+  id: string,
   manufacturer: string,
   model: string,
   price: string,
 };
 
-const Car = ({ manufacturer, model, price }: CarProps) => (
+const openInApp = ({ id }) => {
+  const url = `${config.inappLink}${id}`;
+  openURL(url);
+};
+
+const Car = ({ id, manufacturer, model, price }: CarProps) => (
   <View style={styles.container}>
-    <Text style={styles.header} numberOfLines={1}>
-      {`${manufacturer} ${model}`}
-    </Text>
-    <Text style={[styles.header, styles.price]}>{price}</Text>
+    <TouchableOpacity onPress={() => openInApp({ id })}>
+      <View style={styles.viewContainer}>
+        <Text style={styles.header} numberOfLines={1}>
+          {`${manufacturer} ${model}`}
+        </Text>
+        <Text style={[styles.header, styles.price]}>{price}</Text>
+      </View>
+    </TouchableOpacity>
   </View>
 );
 
@@ -23,12 +40,9 @@ const paddingHorizontal = 16;
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
     borderBottomWidth: 1,
     borderColor: 'darkgray',
-    flexDirection: 'row',
     height: config.rowHeight,
-    justifyContent: 'space-between',
     paddingHorizontal,
     width: width - paddingHorizontal,
   },
@@ -41,6 +55,13 @@ const styles = StyleSheet.create({
   price: {
     flex: 1,
     textAlign: 'right',
+  },
+  viewContainer: {
+    alignItems: 'center',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    minHeight: config.rowHeight,
   },
 });
 

@@ -133,6 +133,7 @@ class CarsNearby extends Component<CarsNearbyProps, CarsNearbyState> {
           carsNearby.map(car => (
             <Car
               key={car.id}
+              id={car.id}
               manufacturer={car.model.manufacturer.name}
               model={car.model.name}
               price={car.local_total_price.verbose}

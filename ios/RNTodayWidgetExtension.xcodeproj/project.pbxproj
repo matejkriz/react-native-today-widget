@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570B53791FF4F4C50091F89B /* Linking.m in Sources */ = {isa = PBXBuildFile; fileRef = 570B53781FF4F4C50091F89B /* Linking.m */; };
 		57D769571ED1AF2B004A13BE /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		57D769581ED1AF36004A13BE /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
 		57D769591ED1AF65004A13BE /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
@@ -252,6 +253,8 @@
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		570B53581FF4F4C50091F89B /* Linking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Linking.h; sourceTree = "<group>"; };
+		570B53781FF4F4C50091F89B /* Linking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Linking.m; sourceTree = "<group>"; };
 		57DB434C1ED1A1E3002AE0EB /* TodayWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		57DB434E1ED1A1E4002AE0EB /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		57DB43511ED1A1E4002AE0EB /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -379,6 +382,8 @@
 		57DB43501ED1A1E4002AE0EB /* TodayWidgetExtension */ = {
 			isa = PBXGroup;
 			children = (
+				570B53581FF4F4C50091F89B /* Linking.h */,
+				570B53781FF4F4C50091F89B /* Linking.m */,
 				57DB43511ED1A1E4002AE0EB /* TodayViewController.h */,
 				57DB43521ED1A1E4002AE0EB /* TodayViewController.m */,
 				57F2EF341EE838EC004F4A12 /* DisplayMode.h */,
@@ -805,6 +810,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				570B53791FF4F4C50091F89B /* Linking.m in Sources */,
 				57DB43531ED1A1E4002AE0EB /* TodayViewController.m in Sources */,
 				57F2EF361EE83955004F4A12 /* DisplayMode.m in Sources */,
 			);

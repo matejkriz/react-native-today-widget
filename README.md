@@ -107,7 +107,14 @@ const TodayWidget = () => (
 );
 ```
 
-#### `setExpandable([expandable], [maxHeight])`
+#### `openURL([url:string])`
+Asks the system open a URL on behalf of the currently running app extension.
+
+- `url` - the URL to open
+
+> If you employ this method to open other apps from your widget, your App Store submission might entail additional review to ensure compliance with the intent of widgets.
+
+#### `setExpandable([expandable:boolean = true], [maxHeight:number = 110])`
 Enables to display native Show More / Less button in top right corner of the widget (iOS 10).
 
 - `expandable` - if `false` Show More / Less button is hidden

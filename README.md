@@ -161,22 +161,20 @@ You could try [Expandable example](./Examples/Expandable)
   - [x] Describe manual linking.
   - [ ] Describe usage of provided scripts.
   - [x] Describe possibilities to change bundle ID.
+  - [ ] Describe how to share data between the widget and the app.
+  - [ ] Describe error handling and debugging.
 
 
 - [ ] Enable to set Display Name for the extension.
 
-- [ x] Use index.js as entry-file to get back compatibility with RN < 0.49
+- [ ] Enable to config Display Name and Bundle ID in app.json
+
+- [ ] Enable to `eject` (move library from node_modules to be under version control).
+
+- [x] Use index.js as entry-file to get back compatibility with RN < 0.49
 
 - [x] Implement Show More/Less button.
 
-- [ ] Implement link to main app.
+- [x] Implement link to main app.
 
 - [ ] Implement conditional displaying of the widget.
-
-- [ ] Enable splitting the code for main app and the widget.
-
-- [ ] Describe how to share data between the widget and the app.
-
-- [ ] Describe error handling and debugging.
-
-- [ ] Provide component to fake search screen in main app during widget development.

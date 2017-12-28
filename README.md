@@ -76,7 +76,7 @@ Memory usage of [Basic](https://github.com/matejkriz/react-native-today-widget/t
 
 
 ### Notes
-- For recomended transparent background simply don't set any `backgroundColor` for your Today Widget component.
+- For recommended transparent background simply don't set any `backgroundColor` for your Today Widget component.
 - [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/extensions/widgets/)
 - Today Widget content will reload when you leave search screen and go back.
 - More about: [iOS App Extensions](https://developer.apple.com/app-extensions/)

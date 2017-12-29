@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { ActivityIndicator, StyleSheet, View, Text } from 'react-native';
+import withDate from './withDate';
 import withLocation from './withLocation';
 import api from '../config/api';
 import config from '../config';
@@ -27,6 +28,7 @@ type CarsNearbyState = {
 };
 
 type CarsNearbyProps = {
+  date: Date,
   latitude: number,
   longitude: number,
 };
@@ -54,14 +56,14 @@ class CarsNearby extends Component<CarsNearbyProps, CarsNearbyState> {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { latitude, longitude } = this.props;
+    const { date, latitude, longitude } = this.props;
     const { isFetching } = this.state;
     if (
       !isFetching &&
       (latitude !== prevProps.latitude || longitude !== prevProps.longitude)
     ) {
       this.fetchNearbyCars({
-        dateRange: getTomorrowDateRange(new Date()),
+        dateRange: getTomorrowDateRange(date),
         latitude,
         longitude,
         pickUpDistance: api.pickUpDistance,
@@ -161,4 +163,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withLocation(CarsNearby);
+export default withLocation(withDate(CarsNearby));

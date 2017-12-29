@@ -11,7 +11,7 @@ import config from '../config';
 import { openURL } from 'react-native-today-widget';
 
 type CarProps = {
-  id: string,
+  id: number,
   manufacturer: string,
   model: string,
   price: string,

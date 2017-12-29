@@ -6,6 +6,7 @@ import api from '../config/api';
 import config from '../config';
 import Car from './Car';
 import { getTomorrowDateRange } from '../lib/date';
+import { parsePrice } from '../lib/price';
 import { dirs, fetchToFile, loadFromFile } from '../lib/fetchBlob';
 
 const carsNearbyPath = `${dirs.CacheDir}${config.cachePath}${
@@ -14,17 +15,9 @@ const carsNearbyPath = `${dirs.CacheDir}${config.cachePath}${
 
 type CarObject = {
   id: number,
-  model: {
-    name: string,
-    manufacturer: {
-      name: string,
-    },
-  },
-  local_total_price: {
-    amount: string,
-    currency: string,
-    verbose: string,
-  },
+  manufacturer: string,
+  model: string,
+  price: string,
 };
 
 type CarsNearbyState = {
@@ -109,14 +102,32 @@ class CarsNearby extends Component<CarsNearbyProps, CarsNearbyState> {
 
   loadNearbyCars = async () => {
     try {
-      const carsNearby = await loadFromFile({ path: carsNearbyPath });
+      const carsNearbyBlob = await loadFromFile({ path: carsNearbyPath });
+      const carsNearby = this.parseCarsNearbyBlob({ carsNearbyBlob });
       this.setState({
-        carsNearby: JSON.parse(carsNearby),
+        carsNearby,
         error: null,
       });
     } catch (error) {
       this.setState({ error });
     }
+  };
+
+  parseCarsNearbyBlob = ({ carsNearbyBlob }) => {
+    const carsNearby = JSON.parse(carsNearbyBlob);
+    const carsNearbyFormatted = carsNearby.reduce(
+      (carsList, car) => [
+        ...carsList,
+        {
+          id: car.id,
+          manufacturer: car.model.manufacturer.name,
+          model: car.model.name,
+          price: parsePrice({ price: car.local_total_price.verbose }),
+        },
+      ],
+      [],
+    );
+    return carsNearbyFormatted;
   };
 
   render() {
@@ -130,13 +141,13 @@ class CarsNearby extends Component<CarsNearbyProps, CarsNearbyState> {
     return (
       <View style={styles.container}>
         {carsNearby &&
-          carsNearby.map(car => (
+          carsNearby.map(({ id, manufacturer, model, price }) => (
             <Car
-              key={car.id}
-              id={car.id}
-              manufacturer={car.model.manufacturer.name}
-              model={car.model.name}
-              price={car.local_total_price.verbose}
+              key={id}
+              id={id}
+              manufacturer={manufacturer}
+              model={model}
+              price={price}
             />
           ))}
       </View>

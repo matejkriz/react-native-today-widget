@@ -4,4 +4,4 @@ type priceProp = {
 };
 
 export const parsePrice = ({ price }: priceProp) =>
-  price.replace(/\.0*/, '').replace(/,/g, ' ');
+  price.replace(/\.0+/, '').replace(/,/g, ' ');

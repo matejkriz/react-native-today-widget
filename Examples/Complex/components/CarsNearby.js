@@ -6,6 +6,7 @@ import withLocation from './withLocation';
 import api from '../config/api';
 import config from '../config';
 import Car from './Car';
+import LinkToMainApp from './LinkToMainApp';
 import { getTomorrowDateRange } from '../lib/date';
 import { parsePrice } from '../lib/price';
 import { dirs, fetchToFile, loadFromFile } from '../lib/fetchBlob';
@@ -152,6 +153,7 @@ class CarsNearby extends Component<CarsNearbyProps, CarsNearbyState> {
               price={price}
             />
           ))}
+        <LinkToMainApp />
       </View>
     );
   }

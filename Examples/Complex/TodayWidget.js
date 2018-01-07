@@ -6,7 +6,7 @@ import config from './config';
 import CarsNearby from './components/CarsNearby';
 
 const isExpandable = true;
-const maxHeight = config.rowHeight * config.maxCountOfCars;
+const maxHeight = config.rowHeight * (config.maxCountOfCars + 1);
 setExpandable(isExpandable, maxHeight);
 
 const TodayWidget = () => (

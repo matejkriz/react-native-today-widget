@@ -1,6 +1,9 @@
 # React Native Today Widget
 > Add iOS Today Widget App Extension to your React Native app
 
+Sample result from [Complex](https://github.com/matejkriz/react-native-today-widget/tree/master/Examples/Complex) example:
+
+![today_widget_example](./screenshots/complex_example.png)
 
 What is [Today Widget](https://developer.apple.com/ios/human-interface-guidelines/extensions/widgets/)?
 
@@ -107,6 +110,10 @@ const TodayWidget = () => (
 );
 ```
 
+Screenshot of opened Developer Menu:
+
+![developer_menu](./screenshots/developer_menu.png)
+
 #### `openURL([url:string])`
 Asks the system open a URL on behalf of the currently running app extension.
 
@@ -157,7 +164,7 @@ You could try [Expandable example](./Examples/Expandable)
 - [x] Embed Extensions binary to the main app in postlink.
 
 - [ ] Enhance documentation.
-  - [ ] Add screenshots.
+  - [x] Add screenshots.
   - [x] Describe manual linking.
   - [ ] Describe usage of provided scripts.
   - [x] Describe possibilities to change bundle ID.

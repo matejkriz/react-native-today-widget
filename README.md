@@ -1,5 +1,5 @@
 # React Native Today Widget
-> Add iOS Today Widget App Extension to your React Native app
+> Experimental library investigating limits of implementation iOS App Extensions using React Native.
 
 Sample result from [Complex](https://github.com/matejkriz/react-native-today-widget/tree/master/Examples/Complex) example:
 
@@ -79,12 +79,17 @@ Memory usage of [Basic](https://github.com/matejkriz/react-native-today-widget/t
 
 
 ### Notes
+- Every native change on widget project is only in `node_modules` so probably gitignored!
 - For recommended transparent background simply don't set any `backgroundColor` for your Today Widget component.
 - [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/extensions/widgets/)
-- Today Widget content will reload when you leave search screen and go back.
 - More about: [iOS App Extensions](https://developer.apple.com/app-extensions/)
 - [Today Widget in App Extension Programming Guide](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/Today.html#//apple_ref/doc/uid/TP40014214-CH11-SW1)
-- Every native changes are only in node_modules so probably gitignored.
+
+To investigate more iOS App Extensions with React Native check those:
+- [react-native-share-extension](https://github.com/alinz/react-native-share-extension)
+- [react-native-share-menu](https://github.com/meedan/react-native-share-menu)
+- [Messages App/App Extension (iOS10) with React Native](https://medium.com/rendez-voo/messages-app-app-extension-ios10-with-react-native-6d22ece64598)
+
 
 ### API Reference
 

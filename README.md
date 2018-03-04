@@ -162,31 +162,3 @@ const TodayWidget = () => {
 ```
 
 You could try [Expandable example](./Examples/Expandable)
-
-### TODO
-- [x] Set Bundle Identifier by the main app in postinstall.
-
-- [x] Embed Extensions binary to the main app in postlink.
-
-- [ ] Enhance documentation.
-  - [x] Add screenshots.
-  - [x] Describe manual linking.
-  - [ ] Describe usage of provided scripts.
-  - [x] Describe possibilities to change bundle ID.
-  - [ ] Describe how to share data between the widget and the app.
-  - [ ] Describe error handling and debugging.
-
-
-- [ ] Enable to set Display Name for the extension.
-
-- [ ] Enable to config Display Name and Bundle ID in app.json
-
-- [ ] Enable to `eject` (move library from node_modules to be under version control).
-
-- [x] Use index.js as entry-file to get back compatibility with RN < 0.49
-
-- [x] Implement Show More/Less button.
-
-- [x] Implement link to main app.
-
-- [ ] Implement conditional displaying of the widget.

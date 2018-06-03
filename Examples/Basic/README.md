@@ -2,8 +2,8 @@
 
 Created by `react-native init Basic` command followed by `yarn add react-native-today-widget` and `react-native link`.
 
-React Native version: `0.54.0`
+React Native version: `0.55.4`
 
-Changes only in [index.js](./index.js) and added file [TodayWidget.js](./TodayWidget.js).
+No changes in generated files, only added [index.widget.js](./index.widget.js) and [TodayWidget.js](./TodayWidget.js).
 
 ![screenshot](./screenshot.png)

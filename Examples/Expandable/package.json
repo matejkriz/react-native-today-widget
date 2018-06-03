@@ -7,9 +7,9 @@
 		"test": "jest"
 	},
 	"dependencies": {
-		"react": "16.0.0-alpha.12",
-		"react-native": "0.48.2",
-		"react-native-today-widget": "^0.7.1"
+		"react": "16.3.1",
+		"react-native": "0.55.4",
+		"react-native-today-widget": "https://github.com/matejkriz/react-native-today-widget.git#feature/8-fix-unable-to-load-error"
 	},
 	"devDependencies": {
 		"babel-jest": "21.0.2",

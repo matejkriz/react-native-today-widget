@@ -41,7 +41,8 @@ You could use `$ npm i react-native-today-widget --save` as well, but don't forg
 
 ### Usage
 
-All you need is to register your component for key `TodayWidgetExtension` in your `index.js`
+All you need is to create an `index.widget.js` file at the root and register there your component for key `TodayWidgetExtension`:
+
 ```jsx
 const TodayWidget = () => (
   <View>
@@ -53,6 +54,9 @@ const TodayWidget = () => (
 
 AppRegistry.registerComponent('TodayWidgetExtension', () => TodayWidget);
 ```
+
+> Please note that registering both the widget and the main app in `index.js` file can cause memory issues. Because the app is also bundled (even if you don't use it in your widget), and it causes 'Unable to load' error. When we split the registration into two different files, the widget and the main app are bundled seperately. See [blog post from Maxim Toyberman](https://medium.com/@maximtoyberman/building-a-react-native-today-widget-in-ios-102830825e42).
+
 In place of `TodayWidget` component, you could use any JSX component. See [Basic example](./Examples/Basic/index.ios.js#L34).
 
 Run your app as usual:

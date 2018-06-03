@@ -9,7 +9,7 @@
   "dependencies": {
     "react": "^16.3.0-alpha.1",
     "react-native": "0.54.0",
-    "react-native-today-widget": "^0.10.1"
+    "react-native-today-widget": "https://github.com/matejkriz/react-native-today-widget.git#feature/8-fix-unable-to-load-error"
   },
   "devDependencies": {
     "babel-jest": "22.4.1",

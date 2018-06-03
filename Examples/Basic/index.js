@@ -1,8 +1,4 @@
-import { AppRegistry, Platform } from 'react-native';
-import App from './App';
-import TodayWidget from './TodayWidget';
+import { AppRegistry } from "react-native";
+import App from "./App";
 
-AppRegistry.registerComponent('Basic', () => App);
-if (Platform.OS === 'ios') {
-  AppRegistry.registerComponent('TodayWidgetExtension', () => TodayWidget);
-}
+AppRegistry.registerComponent("Basic", () => App);

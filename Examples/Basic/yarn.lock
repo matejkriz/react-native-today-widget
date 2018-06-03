@@ -3758,9 +3758,9 @@ react-devtools-core@3.1.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-native-today-widget@^0.10.1:
+"react-native-today-widget@https://github.com/matejkriz/react-native-today-widget.git#feature/8-fix-unable-to-load-error":
   version "0.10.1"
-  resolved "https://registry.yarnpkg.com/react-native-today-widget/-/react-native-today-widget-0.10.1.tgz#6cee595fdf8901e6e55613a2a5a1e9130804438a"
+  resolved "https://github.com/matejkriz/react-native-today-widget.git#4f07243edd9c006952e9261ea054dff0d8cdbeb1"
 
 react-native@0.54.0:
   version "0.54.0"
